@@ -1,6 +1,7 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import ListItems from "../components/ListItems"; 
+import { View, StyleSheet } from "react-native";
+import ListItems from "../components/ListItems";
+import Title from "../components/Title";
+import TButton from "../components/addButton";
 
 export default function Home() {
   const listItems = [
@@ -11,16 +12,15 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>My Todo List</Text>
+      <Title>My Todo List</Title>
+      <View style={styles.divider} />
       <View style={styles.listContainer}>
         {listItems.map((item) => (
           <ListItems key={item.id} title={item.title} />
         ))}
       </View>
-
-      <TouchableOpacity style={styles.addButton}>
-        <Text style={styles.addButtonText}>Add New Todo</Text>
-      </TouchableOpacity>
+      <View style={styles.divider} />
+      <TButton buttonName="Add New Todo" />
     </View>
   );
 }
@@ -31,26 +31,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#f2f2f2",
     padding: 20,
   },
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginVertical: 20,
-  },
   listContainer: {
     flex: 1,
+    marginTop: 10,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: "black",
     marginVertical: 10,
-  },
-  addButton: {
-    backgroundColor: "#4CAF50",
-    padding: 15,
-    borderRadius: 10,
-    alignItems: "center",
-    marginTop: 20,
-  },
-  addButtonText: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
   },
 });

@@ -1,4 +1,3 @@
-import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 export default function ListItems({ title }) {
@@ -11,15 +10,11 @@ export default function ListItems({ title }) {
 
 const styles = StyleSheet.create({
   todoItem: {
-    backgroundColor: "#fff",
+    backgroundColor: "#ffffff",
     padding: 15,
     borderRadius: 10,
-    marginBottom: 10,
-    elevation: 2,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    marginBottom: 12,
+    elevation: 3,
   },
   todoText: {
     fontSize: 18,
