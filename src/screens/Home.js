@@ -1,9 +1,9 @@
 import { View, StyleSheet } from "react-native";
 import ListItems from "../components/ListItems";
 import Title from "../components/Title";
-import TButton from "../components/addButton";
+import AddButton from "../components/AddButton";
 
-export default function Home() {
+export default function Home({ navigation }) {
   const listItems = [
     { id: 1, title: "Buy groceries" },
     { id: 2, title: "Workout" },
@@ -20,7 +20,7 @@ export default function Home() {
         ))}
       </View>
       <View style={styles.divider} />
-      <TButton buttonName="Add New Todo" />
+      <AddButton buttonName="Add New Todo" onPress={() => navigation.navigate("NewTodoScreen")} />
     </View>
   );
 }

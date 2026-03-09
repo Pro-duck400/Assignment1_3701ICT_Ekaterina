@@ -1,13 +1,11 @@
 import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons"; 
 
-export default function AddButton({ buttonName, onPress }) {
+export default function SaveButton({ buttonName, onPress }) {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <View style={styles.content}>
-        <View style={styles.circle}>
-          <Ionicons name="add" size={20} color="black" />
-        </View>
+        <Ionicons name="save-outline" size={20} color="white" style={{ marginRight: 10 }} />
         <Text style={styles.buttonText}>{buttonName}</Text>
       </View>
     </TouchableOpacity>
@@ -20,25 +18,11 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
-    elevation: 3,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
     marginBottom: 10,
   },
   content: {
     flexDirection: "row",
     alignItems: "center",
-  },
-  circle: {
-    width: 26,
-    height: 26,
-    borderRadius: 13,
-    backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: "center",
-    marginRight: 10,
   },
   buttonText: {
     color: "#fff",
