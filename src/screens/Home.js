@@ -11,22 +11,22 @@ export default function Home({ navigation }) {
   ];
 
   return (
-    <View style={styles.container}>
+    <View style={styles.homeContainer}>
       <Title>My Todo List</Title>
-      <View style={styles.divider} />
+      <View style={styles.lineDivider} />
       <View style={styles.listContainer}>
         {listItems.map((item) => (
           <ListItems key={item.id} title={item.title} />
         ))}
       </View>
-      <View style={styles.divider} />
+      <View style={styles.lineDivider} />
       <AddButton buttonName="Add New Todo" onPress={() => navigation.navigate("NewTodoScreen")} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  homeContainer: {
     flex: 1,
     backgroundColor: "#f2f2f2",
     padding: 20,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 10,
   },
-  divider: {
+  lineDivider: {
     height: 1,
     backgroundColor: "black",
     marginVertical: 10,

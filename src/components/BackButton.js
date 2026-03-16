@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 export default function BackButton({ buttonName, onPress }) {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-      <View style={styles.content}>
+      <View style={styles.buttonContent}>
         <Ionicons name="arrow-back" size={20} color="white" style={{ marginRight: 8 }} />
         <Text style={styles.buttonText}>{buttonName}</Text>
       </View>
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 10,
   },
-  content: {
+  buttonContent: {
     flexDirection: "row",
     alignItems: "center",
   },
