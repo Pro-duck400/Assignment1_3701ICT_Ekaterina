@@ -11,7 +11,11 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="NewTodoScreen" component={NewTodoScreen} />
+        <Stack.Screen
+          name="NewTodoScreen"
+          component={NewTodoScreen}
+          options={{ title: "Add New Todo", headerShown: true }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
