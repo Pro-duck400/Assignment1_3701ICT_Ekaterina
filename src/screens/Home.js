@@ -5,9 +5,9 @@ import AddButton from "../components/AddButton";
 
 export default function Home({ navigation }) {
   const listItems = [
-    { id: 1, title: "Buy groceries" },
-    { id: 2, title: "Workout" },
-    { id: 3, title: "Journal" },
+    {id: 1, title: "Buy groceries"},
+    {id: 2, title: "Workout"},
+    {id: 3, title: "Journal"},
   ];
 
   return (

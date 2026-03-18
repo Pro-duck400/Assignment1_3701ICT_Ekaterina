@@ -14,22 +14,9 @@ export default function NewTodoScreen({ navigation }) {
       <View style={styles.divider} />
       <View style={styles.listContainer}>
         <Text style={styles.textLabel}>Title</Text>
-        <TextInput
-          style={styles.titleInput}
-          placeholder="Add new todo title"
-          value={todoTitle}
-          onChangeText={setTodoTitle}
-        />
+        <TextInput style={styles.titleInput} placeholder="Add new todo title" value={todoTitle} onChangeText={setTodoTitle}/>
         <Text style={styles.textLabel}>Description</Text>
-        <TextInput
-          style={styles.descriptionInput}
-          placeholder="Add your description"
-          value={todoDescription}
-          onChangeText={setTodoDescription}
-          multiline={true}
-          numberOfLines={4}
-          textAlignVertical="top"
-        />
+        <TextInput style={styles.descriptionInput} placeholder="Add your description" value={todoDescription} onChangeText={setTodoDescription} multiline={true} numberOfLines={4} textAlignVertical="top"/>
       </View>
       <View style={styles.buttonRow}>
         <BackButton buttonName="Cancel" onPress={() => navigation.goBack()} />
