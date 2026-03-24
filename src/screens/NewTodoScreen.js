@@ -1,13 +1,46 @@
-import { View, TextInput, StyleSheet, Text } from "react-native";
+import { View, TextInput, StyleSheet, Text, Alert } from "react-native";
 import Title from "../components/Title";
 import BackButton from "../components/BackButton";
 import SaveButton from "../components/SaveButton";
 import { useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { validateTodo } from "../utils/Validation";
 
 export default function NewTodoScreen({ navigation }) {
   const [todoTitle, setTodoTitle] = useState("");
   const [todoDescription, setTodoDescription] = useState("");
 
+  const manageSave = async () => {
+    const result = validateTodo(todoTitle, todoDescription);
+
+    if (!result.valid) {
+      Alert.alert("ERROR", result.message);
+      return;
+    }
+
+    const newTodo = {
+      id: Date.now().toString() + Math.random().toString(36).substring(2, 9),
+      title: todoTitle,
+      description: todoDescription,
+      completed: false,
+    };
+
+    try {
+      const storedTodos = await AsyncStorage.getItem("TODOS");
+      const todos = storedTodos ? JSON.parse(storedTodos) : [];
+      const updatedTodos = [...todos, newTodo];
+
+      await AsyncStorage.setItem("TODOS", JSON.stringify(updatedTodos));
+
+      setTodoTitle("");
+      setTodoDescription("");
+      Alert.alert("Success", "Todo Added Successfully");
+    } catch (error) {
+      console.log("Error saving todo:", error);
+      Alert.alert("Error", "Failed to save todo. Try again.");
+    }
+  };
+  
   return (
     <View style={styles.container}>
       <Title>Add New Todo</Title>
@@ -19,8 +52,8 @@ export default function NewTodoScreen({ navigation }) {
         <TextInput style={styles.descriptionInput} placeholder="Add your description" value={todoDescription} onChangeText={setTodoDescription} multiline={true} numberOfLines={4} textAlignVertical="top"/>
       </View>
       <View style={styles.buttonRow}>
-        <BackButton buttonName="Cancel" onPress={() => navigation.goBack()} />
-        <SaveButton buttonName="Save" />
+                <BackButton buttonName="Back" onPress={() => navigation.goBack()} />
+        <SaveButton buttonName="Save" onPress={manageSave}/>
       </View>
     </View>
   );
