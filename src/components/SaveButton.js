@@ -1,5 +1,6 @@
 import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import colours from "../constants/Colours";
 
 export default function SaveButton({ buttonName, onPress }) {
   return (
@@ -14,7 +15,7 @@ export default function SaveButton({ buttonName, onPress }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#9e4caf",
+    backgroundColor: colours.mainFont,
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonText: {
-    color: "#fff",
+    color: "white",
     fontSize: 18,
     fontWeight: "bold",
   },

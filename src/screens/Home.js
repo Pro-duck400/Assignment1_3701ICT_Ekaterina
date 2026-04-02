@@ -1,7 +1,7 @@
 import { View, StyleSheet, FlatList } from "react-native";
 import { useState, useEffect } from "react";
 import { useNavigation, useIsFocused } from "@react-navigation/native";
-
+import colours from "../constants/Colours";
 import ListItems from "../components/ListItems";
 import Title from "../components/Title";
 import AddButton from "../components/AddButton";
@@ -49,12 +49,12 @@ export default function Home() {
 const styles = StyleSheet.create({
   homeContainer: {
     flex: 1,
-    backgroundColor: "#f2f2f2",
+    backgroundColor: colours.mainBackground,
     padding: 20,
   },
   lineDivider: {
     height: 1,
-    backgroundColor: "black",
+    backgroundColor: colours.divider,
     marginVertical: 10,
   },
 });

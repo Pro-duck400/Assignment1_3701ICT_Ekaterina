@@ -1,5 +1,6 @@
 import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import colours from "../constants/Colours";
 
 export default function AddButton({ buttonName, onPress }) {
   return (
@@ -16,12 +17,12 @@ export default function AddButton({ buttonName, onPress }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#9e4caf",
+    backgroundColor: colours.mainFont,
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
     elevation: 3,
-    shadowColor: "#000",
+    shadowColor: "black",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   buttonText: {
-    color: "#fff",
+    color: "white",
     fontSize: 18,
     fontWeight: "bold",
   },

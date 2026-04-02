@@ -37,7 +37,7 @@ export default function ListItems({ item, onDelete, onToggleComplete }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     padding: 15,
     borderRadius: 10,
     marginBottom: 10,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   description: {
     marginTop: 10,
     fontSize: 16,
-    color: "#555",
+    color: black,
   },
 
   controls: {

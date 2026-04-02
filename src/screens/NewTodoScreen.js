@@ -1,10 +1,9 @@
 import { View, TextInput, StyleSheet, Text, Alert } from "react-native";
 import { useState } from "react";
-
+import colours from "../constants/Colours";
 import Title from "../components/Title";
 import BackButton from "../components/BackButton";
 import SaveButton from "../components/SaveButton";
-
 import { validateTodo } from "../utils/Validation";
 import { loadTodos, saveTodos } from "../utils/storage";
 import Todo from "../models/Todo";
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#f2f2f2"
+    backgroundColor: colours.mainBackground,
   },
   buttonRow: {
     flexDirection: "row",
@@ -71,13 +70,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 12,
     borderRadius: 8,
-    backgroundColor: "#fff",
+    backgroundColor: colours.inputFields,
   },
   descriptionInput: {
     borderWidth: 1,
     padding: 12,
     borderRadius: 8,
-    backgroundColor: "#fff",
+    backgroundColor: colours.inputFields,
     minHeight: 80,
   },
   listContainer: {
@@ -85,7 +84,7 @@ const styles = StyleSheet.create({
   },
   divider: {
     height: 1,
-    backgroundColor: "black",
+    backgroundColor: colours.divider,
     marginVertical: 10
   },
 });
