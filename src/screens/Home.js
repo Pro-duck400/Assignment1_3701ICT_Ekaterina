@@ -5,7 +5,7 @@ import colours from "../constants/Colours";
 import ListItems from "../components/ListItems";
 import Title from "../components/Title";
 import AddButton from "../components/AddButton";
-import { loadTodos, saveTodos } from "../utils/storage";
+import { loadTodos, saveTodos } from "../utils/Storage";
 
 export default function Home() {
   const [todos, setTodos] = useState([]);

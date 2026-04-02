@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   description: {
     marginTop: 10,
     fontSize: 16,
-    color: black,
+    color: "black",
   },
 
   controls: {

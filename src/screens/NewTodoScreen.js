@@ -5,7 +5,7 @@ import Title from "../components/Title";
 import BackButton from "../components/BackButton";
 import SaveButton from "../components/SaveButton";
 import { validateTodo } from "../utils/Validation";
-import { loadTodos, saveTodos } from "../utils/storage";
+import { loadTodos, saveTodos } from "../utils/Storage";
 import Todo from "../models/Todo";
 
 export default function NewTodoScreen({ navigation }) {
@@ -41,7 +41,7 @@ export default function NewTodoScreen({ navigation }) {
         <Text style={styles.textLabel}>Title</Text>
         <TextInput style={styles.titleInput} value={todoTitle} onChangeText={setTodoTitle} />
         <Text style={styles.textLabel}>Description</Text>
-        <TextInput style={styles.descriptionInput} value={todoDescription} onChangeText={setTodoDescription} multiline={true} numberOfLines={4} />
+        <TextInput style={styles.descriptionInput} value={todoDescription} onChangeText={setTodoDescription} multiline={true} numberOfLines={4} textAlignVertical="top"/>
       </View>
       <View style={styles.buttonRow}>
         <BackButton buttonName="Back" onPress={() => navigation.goBack()} />
